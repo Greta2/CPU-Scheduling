@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="textanime">
+      <p>CPU Scheduling Algorithm Visualization</p>
+    </div>
+    <div class="main_body">
+      <form id="algorithm">
+        <div class="radio-buttons-list">
+          <label class="radio">
+            <input
+              type="radio"
+              name="algorithm"
+              value="sjf"
+              class="radio__input"
+            />
+            <span class="radio__span">SJF</span>
+          </label>
+
+          <label class="radio">
+            <input
+              type="radio"
+              name="algorithm"
+              value="robin"
+              class="radio__input"
+            />
+            <span class="radio__span">Round Robin</span>
+          </label>
+        </div>
+      </form>
+
+      <br />
+
+      <div class="container">
+        <table id="inputTable">
+          <tr>
+            <th>Process</th>
+            <th>Arrival Time</th>
+            <th>Execute Time</th>
+            <th class="servtime">Service Time</th>
+            <th class="priority-only">Priority</th>
+          </tr>
+          <tr>
+            <td>P0</td>
+            <td>0</td>
+            <td>
+              <input id="inp" class="initial exectime" type="text" value="5" />
+            </td>
+            <td class="servtime"></td>
+            <td class="priority-only initial"><input type="text" /></td>
+          </tr>
+          <tr>
+            <td>P1</td>
+            <td>1</td>
+            <td><input id="inp" class="initial exectime" value="3" /></td>
+            <td class="servtime"></td>
+            <td class="priority-only"><input type="text" /></td>
+          </tr>
+        </table>
+      </div>
+
+      <input class="butt" type="button" value="+" onclick="addRow();" />
+      <input
+        class="butt"
+        id="minus"
+        type="button"
+        value="-"
+        onclick="deleteRow();"
+      />
+    </div>
+    <div></div>
+    <p id="quantumParagraph" hidden>
+      Quantum:
+      <input id="inp" style="width: 50px" id="quantum" type="text" value="3" />
+    </p>
+    <input class="butt" type="button" value="Go" onclick="draw();" />
+    <br /><br />
+
+    <fresh> </fresh>
+    <p>Timer: <strong id="timer"></strong> Units</p>
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
